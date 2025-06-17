@@ -1,6 +1,5 @@
-id=UnamedSkiaVK
-name=Unamed SkiaVK Enabler
+id=AmeSVK
+name=SkiaVK Renderer
 version=v1.0 - End
-versionCode=1
 author=Kanagawa Yamada
 description=Enabling SkiaVK as HWUI Renderer
