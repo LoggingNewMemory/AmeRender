@@ -3,6 +3,9 @@
 AmeSVK <br />
 Change HWUI Renderer to SkiaVK
 
+How to Use?
+- It's a Module. Flash & Done
+
 ## WARNING
 May Cause Black Screen If Unsupported
 
