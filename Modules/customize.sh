@@ -28,7 +28,7 @@ sleep 1.5
 ui_print "------------------------------------"
 ui_print "            MODULE INFO             "
 ui_print "------------------------------------"
-ui_print "Name : AmeVK"
+ui_print "Name : AmeSVK"
 ui_print "Version : 3.0"
 ui_print "Support Root : Magisk / KernelSU / APatch"
 ui_print " "
