@@ -1,7 +1,5 @@
 ![Banner](https://github.com/user-attachments/assets/0d94cc28-85b6-4a48-a63b-4c665fff498d)
 
-An Attempt to Optimize Android Render
-
 How to Use?
 - It's a Module. Flash & Done
 
