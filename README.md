@@ -1,7 +1,7 @@
-![Banner](https://github.com/user-attachments/assets/65246981-f500-4e10-a4a1-2b9a5e0f06ce)
+![Banner](https://github.com/user-attachments/assets/0d94cc28-85b6-4a48-a63b-4c665fff498d)
 
-AmeSVK <br />
-Change HWUI Renderer to SkiaVK
+AmeRender <br />
+An Attempt to Optimize Android Render
 
 How to Use?
 - It's a Module. Flash & Done
