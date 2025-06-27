@@ -3,7 +3,7 @@ setprop debug.hwui.renderer skiaglthreaded
 setprop debug.renderengine.backend skiaglthreaded
 setprop debug.renderengine.capture_skia_ms 0
 setprop debug.renderengine.skia_atrace_enabled false
-setprop debug.hwui.skia_use_perfetto_track_events=false
+setprop debug.hwui.skia_use_perfetto_track_events false
 setprop debug.hwui.skia_tracing_enabled false
 
 # Extended
