@@ -1,0 +1,5 @@
+id=AmeRender
+name=AmeRender | SkiaGL Threaded
+version=5.0
+author=Kanagawa Yamada
+description=An Attempt to Optimize Android Render | SkiaGL Edition

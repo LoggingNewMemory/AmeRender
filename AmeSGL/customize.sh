@@ -1,7 +1,7 @@
 LATESTARTSERVICE=true
 
 ui_print "------------------------------------"
-ui_print "               AmeVK                "
+ui_print "           AmeSGL | SkiaGL          "
 ui_print "------------------------------------"
 ui_print "         By: Kanagawa Yamada        "
 ui_print "------------------------------------"
@@ -28,8 +28,8 @@ sleep 1.5
 ui_print "------------------------------------"
 ui_print "            MODULE INFO             "
 ui_print "------------------------------------"
-ui_print "Name : AmeSVK"
-ui_print "Version : 3.0"
+ui_print "Name : AmeSGL"
+ui_print "Version : 5.0"
 ui_print "Support Root : Magisk / KernelSU / APatch"
 ui_print " "
 sleep 1.5
@@ -38,5 +38,5 @@ ui_print "      INSTALLING        "
 ui_print " "
 sleep 1.5
 
-unzip -o "$ZIPFILE" 'AmeVK/*' -d $MODPATH >&2
-set_perm_recursive $MODPATH/AmeVK 0 0 0774 0774
+unzip -o "$ZIPFILE" 'AmeRender/*' -d $MODPATH >&2
+set_perm_recursive $MODPATH/AmeRender 0 0 0774 0774
