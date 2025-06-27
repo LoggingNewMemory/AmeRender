@@ -1,14 +1,15 @@
-# Main prop
-setprop debug.hwui.renderer skiagl
+# Main prop (Modified, Thanks to @Kzuyoo & @Droid_tweak)
+setprop debug.hwui.renderer skiaglthreaded
 setprop debug.renderengine.backend skiaglthreaded
 setprop debug.renderengine.capture_skia_ms 0
 setprop debug.renderengine.skia_atrace_enabled false
+setprop debug.hwui.skia_use_perfetto_track_events=false
 setprop debug.hwui.skia_tracing_enabled false
 
 # Extended
 setprop ro.zygote.disable_gl_preload true
 
-# Thanks to Sirkel Developer
+# Thanks to @Droid_tweak
 setprop debug.hwui.app_memory_policy aggressive
 setprop debug.hwui.capture_skp_enabled true
 setprop debug.hwui.capture_skp_frames 0
@@ -29,7 +30,7 @@ setprop debug.hwui.skip_empty_damage true
 setprop debug.hwui.drawing_enabled true
 setprop debug.hwui.trace_gpu_resources false
 
-# From ZuanYX
+# From @ZuanDroid
 setprop persist.service.gfx.enable 1
 setprop persist.service.gfx.gpu_rendering_priority 1
 setprop persist.service.gfx.gpu_usage_limit 100
@@ -44,3 +45,4 @@ setprop persist.service.gfx.renderthread 1
 # Extended prop
 # https://source.android.com/docs/core/graphics/renderer
 # The developers from "Sirkel Developers"
+# 
