@@ -1,7 +1,4 @@
-![Banner](https://github.com/user-attachments/assets/65246981-f500-4e10-a4a1-2b9a5e0f06ce)
-
-AmeSVK <br />
-Change HWUI Renderer to SkiaVK
+![Banner](https://github.com/user-attachments/assets/0d94cc28-85b6-4a48-a63b-4c665fff498d)
 
 How to Use?
 - It's a Module. Flash & Done
