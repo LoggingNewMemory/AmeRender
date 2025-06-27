@@ -10,6 +10,7 @@ setprop debug.hwui.skia_tracing_enabled false
 setprop ro.zygote.disable_gl_preload true
 
 # Thanks to @Droid_tweak
+setprop debug.sf.vsp_trace false
 setprop debug.hwui.app_memory_policy aggressive
 setprop debug.hwui.capture_skp_enabled true
 setprop debug.hwui.capture_skp_frames 0
@@ -38,11 +39,10 @@ setprop persist.service.gfx.gpu_boost 1
 setprop persist.service.gfx.renderthread 1
 
 # Source:
-# Main prop
 # https://android.googlesource.com/platform/frameworks/base/+/master/libs/hwui/Properties.h
 # https://android.googlesource.com/platform/frameworks/base/+/4badfe6%5E%21/
 # https://android.googlesource.com/platform/frameworks/native/+/0ee9c2d7868707aeeb1505ed01f206ebe6f7dd82%5E%21/
-# Extended prop
+# https://android.googlesource.com/platform/frameworks/native/+/d4354a9df28c38136f4bfdf75ea10067e3340d8b%5E%21/
 # https://source.android.com/docs/core/graphics/renderer
+# (More)
 # The developers from "Sirkel Developers"
-# 
