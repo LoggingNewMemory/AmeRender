@@ -14,16 +14,12 @@ setprop debug.sf.vsp_trace false
 setprop debug.hwui.app_memory_policy aggressive
 setprop debug.hwui.capture_skp_enabled true
 setprop debug.hwui.capture_skp_frames 0
-setprop debug.hwui.disabledither true
-setprop debug.hwui.early_z 1
 setprop debug.hwui.fps_divisor -1
 setprop debug.hwui.profile 0
 setprop debug.hwui.render_dirty_regions false
 setprop debug.hwui.render_thread_priority 1
 setprop debug.hwui.skia_atrace_enabled 0
-setprop debug.hwui.skip_eglmanager_telemetry true
 setprop debug.hwui.use_hint_manager true
-setprop debug.performance.tuning 1
 setprop debug.hwc.asyncdisp 1
 setprop debug.hwui.disable_vsync true
 setprop debug.hwui.use_buffer_age true
