@@ -8,12 +8,6 @@
 # Celestial-Flinger-Flux by the kazuyoo
 # Open-source powered — with appreciation to GL-DP and all contributors.
 # Licensed under the MIT License.
-#
-# System surface properties have been precisely tuned to enhance frame scheduling accuracy,
-# rendering latency, and responsiveness — especially across 60Hz to 120Hz displays.
-# These optimizations aim to deliver smoother UI transitions and better app performance
-# without compromising system stability.
-#
 
 # ----------------- HELPER FUNCTIONS -----------------
 # --- Retrieve SurfaceFlinger & display data ---
@@ -94,7 +88,7 @@ other() {
 }
   
 # ----------------- MAIN EXECUTION -----------------
-main() {
+main_flux() {
   dumpsys SurfaceFlinger --latency-clear
   sleep 1
   # --- Adaptive calculation Extended ---
@@ -139,7 +133,7 @@ main() {
 }
 
 # Main Execution & Exit script successfully
- sync && main
+ sync && main_flux
 
 #####################################
 # End of Celestial Flinger Flux
@@ -151,12 +145,10 @@ main() {
 # Note: Notification Disabled, Wait boot complete removed
 # Purpose of this is the Render (GPU, etc)
 ###################################
-#!/system/bin/sh
+
 # Do NOT assume where your module will be located.
 # ALWAYS use $MODDIR if you need to know where this script
 # and module is placed.
-# This will make sure your module will still work
-# if Magisk change its mount point in the future
 MODDIR=${0%/*}
 
 # ----------------- VARIABLES -----------------
@@ -482,7 +474,7 @@ cleanup_memory() {
 }
 
 # ----------------- MAIN EXECUTION -----------------
-main() {
+main_render() {
     optimize_gpu_temperature
     additional_gpu_settings
     optimize_gpu_frequency
@@ -495,7 +487,7 @@ main() {
 }
 
 # Main Execution & Exit script successfully
-sync && main
+sync && main_render
 
 ############################
 # End of Celestial Render
@@ -507,44 +499,56 @@ sync && main
 # This supposed to be a better one + additional with the Celestial Render Flux
 ############################
 
-MAX_FPS=$(dumpsys display 2>/dev/null | grep -Eo 'fps=[0-9]+' | cut -d= -f2 | sort -nr | head -n1)
-[ -z "$MAX_FPS" ] && MAX_FPS=60
-VSYNC_NS=$((1000000000 / MAX_FPS))
-VAL_E=$(( (VSYNC_NS * 80) / 100 ))
-VAL_F=$(( (VSYNC_NS * 60) / 100 ))
-VAL_G=$(( -VAL_E ))
-VAL_H=$(( -VAL_F ))
+facur_main() {
+    local MAX_FPS
+    local VSYNC_NS
+    local VAL_E
+    local VAL_F
+    local VAL_G
+    local VAL_H
 
-echo "Detected FPS: $MAX_FPS | VSync: ${VSYNC_NS}ns"
-echo "Durations (E=$VAL_E, F=$VAL_F, G=$VAL_G, H=$VAL_H)"
+    MAX_FPS=$(dumpsys display 2>/dev/null | grep -Eo 'fps=[0-9]+' | cut -d= -f2 | sort -nr | head -n1)
+    [ -z "$MAX_FPS" ] && MAX_FPS=60
+    VSYNC_NS=$((1000000000 / MAX_FPS))
+    VAL_E=$(( (VSYNC_NS * 80) / 100 ))
+    VAL_F=$(( (VSYNC_NS * 60) / 100 ))
+    VAL_G=$(( -VAL_E ))
+    VAL_H=$(( -VAL_F ))
 
-for prop in \
-    debug.sf.early.app.duradebugtion debug.sf.earlyGl.app.duration \
-    debug.sf.high_fps.early.app.duration debug.sf.high_fps.earlyGl.app.duration \
-    debug.sf.high_fps.late.app.duration debug.sf.late.app.duration; do
-    setprop "$prop" "$VAL_E"
-done
+    echo "Detected FPS: $MAX_FPS | VSync: ${VSYNC_NS}ns"
+    echo "Durations (E=$VAL_E, F=$VAL_F, G=$VAL_G, H=$VAL_H)"
 
-for prop in \
-    debug.sf.early.sf.duration debug.sf.earlyGl.sf.duration \
-    debug.sf.high_fps.early.sf.duration debug.sf.high_fps.earlyGl.sf.duration \
-    debug.sf.high_fps.late.sf.duration debug.sf.late.sf.duration; do
-    setprop "$prop" "$VAL_F"
-done
+    for prop in \
+        debug.sf.early.app.duration debug.sf.earlyGl.app.duration \
+        debug.sf.high_fps.early.app.duration debug.sf.high_fps.earlyGl.app.duration \
+        debug.sf.high_fps.late.app.duration debug.sf.late.app.duration; do
+        setprop "$prop" "$VAL_E"
+    done
 
-for prop in \
-    debug.sf.earlyGl_app_phase_offset_ns debug.sf.early_app_phase_offset_ns \
-    debug.sf.high_fps_earlyGl_app_phase_offset_ns debug.sf.high_fps_early_app_phase_offset_ns \
-    debug.sf.high_fps_late_app_phase_offset_ns debug.sf.late_app_phase_offset_ns; do
-    setprop "$prop" "$VAL_G"
-done
+    for prop in \
+        debug.sf.early.sf.duration debug.sf.earlyGl.sf.duration \
+        debug.sf.high_fps.early.sf.duration debug.sf.high_fps.earlyGl.sf.duration \
+        debug.sf.high_fps.late.sf.duration debug.sf.late.sf.duration; do
+        setprop "$prop" "$VAL_F"
+    done
 
-for prop in \
-    debug.sf.earlyGl_phase_offset_ns debug.sf.early_phase_offset_ns \
-    debug.sf.high_fps_earlyGl_phase_offset_ns debug.sf.high_fps_early_phase_offset_ns \
-    debug.sf.high_fps_late_phase_offset_ns debug.sf.late_phase_offset_ns; do
-    setprop "$prop" "$VAL_H"
-done
+    for prop in \
+        debug.sf.earlyGl_app_phase_offset_ns debug.sf.early_app_phase_offset_ns \
+        debug.sf.high_fps_earlyGl_app_phase_offset_ns debug.sf.high_fps_early_app_phase_offset_ns \
+        debug.sf.high_fps_late_app_phase_offset_ns debug.sf.late_app_phase_offset_ns; do
+        setprop "$prop" "$VAL_G"
+    done
+
+    for prop in \
+        debug.sf.earlyGl_phase_offset_ns debug.sf.early_phase_offset_ns \
+        debug.sf.high_fps_earlyGl_phase_offset_ns debug.sf.high_fps_early_phase_offset_ns \
+        debug.sf.high_fps_late_phase_offset_ns debug.sf.late_phase_offset_ns; do
+        setprop "$prop" "$VAL_H"
+    done
+}
+
+# Execute Facur Logic
+sync && facur_main
 
 ############################
 # End of Facur.sh
