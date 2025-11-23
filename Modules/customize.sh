@@ -1,12 +1,9 @@
 LATESTARTSERVICE=true
 
 ui_print "------------------------------------"
-ui_print "           AmeSGL | SkiaGL          "
+ui_print "           AmeRender GEN II         "
 ui_print "------------------------------------"
 ui_print "         By: Kanagawa Yamada        "
-ui_print "------------------------------------"
-ui_print "       DON'T BLAME ME IF YOU        " 
-ui_print "          GOT BLACK SCREEN          "
 ui_print "------------------------------------"
 ui_print " "
 sleep 1.5
@@ -28,7 +25,7 @@ sleep 1.5
 ui_print "------------------------------------"
 ui_print "            MODULE INFO             "
 ui_print "------------------------------------"
-ui_print "Name : AmeSGL"
+ui_print "Name : AmeRender GEN II"
 ui_print "Version : 6.0"
 ui_print "Support Root : Magisk / KernelSU / APatch"
 ui_print " "
